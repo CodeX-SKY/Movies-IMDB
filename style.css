@@ -72,6 +72,16 @@ span, a {
     justify-content: center;
     column-gap: 20px;
 }
+.logo-box {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+}
+.logo {
+    width: 72px;
+    height: fit-content;
+    filter: drop-shadow(0 0 6px #000);
+}
 .header {
     text-align: center;
     padding: 25px 0;
