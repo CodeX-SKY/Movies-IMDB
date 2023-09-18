@@ -1,7 +1,34 @@
-let all = document.querySelector(".all");
+let all = document.querySelector(".center");
+var top = document.querySelector(".top");
+var more = document.querySelector(".more");
+
+// var f = function(){
+//     if(window.scrollY > 1000){
+//         top.classList.add("top-text");
+//     } else {
+//         top.classList.remove("top-text");
+//     }
+// }
+// var debounce = (func, wait, immediate) => {
+//     var timeout;
+//     return function () {
+//         var context = this, args = arguments;
+//         var later = function () {
+//             timeout = null;
+//             if (!immediate) func.apply(context, args);
+//         };
+//         var callNow = immediate && !timeout;
+//         clearTimeout(timeout);
+//         timeout = setTimeout(later, wait);
+//         if (callNow) func.apply(context, args);
+//     };
+// };
+// console.log(window.scrollY);
+
+// window.addEventListener("scrollY", debounce(f, 30));
 
 
-let x = 1;
+let x = "1";
 let kinolar = movies.map(function(movie){
     return {
         name: movie.Title,
@@ -20,7 +47,9 @@ let kinolar = movies.map(function(movie){
     }
 });
 
-for(i = 0; i < 54; i++){
+// let kinos_leng = 75 + more.onclick.75;
+
+for(i = 0; i < 75; i++){
     let movies = document.createElement("div");
     movies.classList.add('movies');
 
@@ -86,6 +115,7 @@ for(i = 0; i < 54; i++){
     all.appendChild(movies);
 }
 
+
 // Search 
 let form = document.querySelector(".form");
 let input = document.querySelector(".input");
@@ -93,16 +123,16 @@ let input = document.querySelector(".input");
 form.addEventListener('submit' , function(evt){
     evt.preventDefault();
 
-    let val = input.value;
-    let key = new RegExp(val, 'gi');
+    let key = new RegExp(input.value, 'gi');
 
     let result = kinolar.filter(function(movi){
         return movi.full.match(key);
 
-        // full = full title = movie title + category + rating
+        // full = full title = movie title + category + rating + // movie number
     })
 
     all.textContent = '';
+    more.classList.remove("remove");
 
     for(i = 0; i < 22; i++){
         let movies = document.createElement("div");
@@ -170,3 +200,9 @@ form.addEventListener('submit' , function(evt){
         all.appendChild(movies);
     }
 })
+
+// + Show more
+// more.addEventListener('click' , function(){
+//     let addMovie = kinolar.length + addMovieNum;
+//     let addMovieNum = kinolar.length + 75;
+// })
