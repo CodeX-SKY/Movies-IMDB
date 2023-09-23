@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies App </title>
+    <link rel="shortcut icon" href="Images/logo-fav.png" type="image/png">
     <!-- Icons -->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css">
@@ -13,13 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Style -->
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="Css/style.css">
 <body>
+    <div id="load-box">
+        <div id="load-center">
+            <div id="load"></div>
+            <p id="load-text">Loading <span></span></p>
+        </div>
+    </div>
+
     <div class="all">
         <div class="top">
             <div class="logo-box">
-                <img class="logo" src="LOGO.png" alt="logo">
+                <img class="logo" src="Images/logo.png" alt="logo">
                 <h1 class="header">Movies App</h1>
             </div>
             <form class="form" action="#">
@@ -29,9 +36,16 @@
         </div>
         <div class="center"></div>
         <button class="more">Show More <span>></span></button>
+
+        <div class="ad-movie-sites">
+            <a class="link" href="http://uzmovi.com/"><img class="movie-ad" src="https://cdn.uzmovi.com/v1/images/favicon/apple-touch-icon.png?v=2.6.4" alt="movie ad"></a>
+            <a class="link" href="http://asilmedia.org/"><img class="movie-ad" src="https://image.winudf.com/v2/image1/Y29tLmFzaWxtZWRpYS5uZXRfaWNvbl8xNjQyMzI0MjYxXzA4Ng/icon.png?w=184&fakeurl=1" alt="movie ad"></a>
+        </div>
     </div>
 
-    <script src="movies.js"></script>
-    <script src="main.js"></script>
+    <script src="JavaScript/movies.js"></script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/vanilla.js"></script>
+    <!-- <script src="JavaScript/private.js"></script> -->
 </body>
 </html>

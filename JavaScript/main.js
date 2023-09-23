@@ -49,13 +49,29 @@ let kinolar = movies.map(function(movie){
 
 // let kinos_leng = 75 + more.onclick.75;
 
-for(i = 0; i < 75; i++){
+for(i = 0; i < 300 ; i++){
     let movies = document.createElement("div");
     movies.classList.add('movies');
 
     let mvname = document.createElement("h2");
     mvname.classList.add('mv-name');
     mvname.textContent = kinolar[i].name;
+
+    let mvset = document.createElement("div");
+    mvset.classList.add('mv-set-ic');
+    mvset.innerHTML = '<span class="mv-set-run fa-regular fa-plus"></span>';
+
+    let mvsethv = document.createElement("div");
+    mvsethv.classList.add('mv-set-box');
+    mvsethv.innerHTML = '<span class="mv-set-hv-txt">Add to watchlist</span>' + '<span class="mv-set-hv-icon fa-solid fa-caret-right"></span>';
+    // mvoth.classList.add('fa-regular');
+    // mvoth.classList.add('fa-plus');
+    // mvoth.classList.add('fa-thin');
+    // mvoth.classList.add('fa-memo-circle-info');
+
+    let mvinfbtn = document.createElement("button");
+    mvinfbtn.classList.add('mv-inf-btn');
+    mvinfbtn.innerHTML = 'More about the film';
 
     let mvyear = document.createElement("p");
     mvyear.classList.add('mv-year');
@@ -103,13 +119,16 @@ for(i = 0; i < 75; i++){
 
         
     movies.appendChild(mvname);
+    movies.appendChild(mvset);
+    movies.appendChild(mvsethv);
     movies.appendChild(mvyear);
     movies.appendChild(mvtime);
     movies.appendChild(mvrat);
-    // movies.appendChild(mvlan);
     movies.appendChild(ul);
     movies.appendChild(mvnum);
     movies.appendChild(mvwt);
+    movies.appendChild(mvinfbtn);
+    // movies.appendChild(mvlan); 
     // movies.appendChild(mvinf);
     
     all.appendChild(movies);
@@ -201,8 +220,10 @@ form.addEventListener('submit' , function(evt){
     }
 })
 
-// + Show more
-// more.addEventListener('click' , function(){
-//     let addMovie = kinolar.length + addMovieNum;
-//     let addMovieNum = kinolar.length + 75;
-// })
+
+// Loading
+let loader = document.getElementById("load-box");
+
+window.addEventListener('load' , function(){
+    loader.style.display = "none";
+});
